@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux'
+import { initData } from '../actions/async'
 
 class App extends Component {
+  componentDidMount() {
+    console.log('component did mount')
+    this.props.dispatch(initData())
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
