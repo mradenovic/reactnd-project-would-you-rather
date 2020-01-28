@@ -3,8 +3,17 @@ import './App.css';
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
-import { Switch, Route } from 'react-router-dom'
-import Dashboard from './Dashboard'
+import Main from './Main'
+import { makeStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles"
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Container from '@material-ui/core/Container'
+
+const useStyles = makeStyles(theme => ({
+  mainGrid: {
+    marginTop: theme.spacing(3),
+  },
+}))
 
 class App extends Component {
   componentDidMount() {
@@ -15,38 +24,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          Would you rather...
-        </header>
-
-        <Switch>
-          <Route exact path="/">
-            <Dashboard />
-          </Route>
-
-          <Route path="/questions/:question_id">
-            Question
-          </Route>
-
-          <Route path="/add">
-            Add New Question
-          </Route>
-
-          <Route path="/leaderboard">
-            LeaderBoard
-          </Route>
-
-          <Route path="*">
-            Error
-          </Route>
-        </Switch>
-
+        <CssBaseline />
+        <Container maxWidth="lg">
+          <header>Would you rather...</header>
+          <main>
+            <Main />
+          </main>
+        </Container>
         <footer>
-          Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a>
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/roundicons"
+            title="Roundicons"
+          >
+            Roundicons
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
         </footer>
       </div>
     );
   }
 }
 
-export default withRouter(connect()(App));
+export default withRouter(connect()(withStyles(useStyles)(App)));
