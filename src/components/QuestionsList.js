@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import GridList from '@material-ui/core/GridList'
+import GridListTile from '@material-ui/core/GridListTile'
 
 class QuestionsList extends Component {
   render() {
-    const { answered } = this.props
+    const { questions, answered } = this.props
     const shown = answered ? 'Answered' : 'Unanswered'
 
     return (
       <div>
-        <h3 className='center'>List of {shown} questions </h3>
-        <ul className='dashboard-list'>
-          {this.props.questions.map((id) => (
-            <li key={id}>
-              <div>QUESTION ID: {id}</div>
-            </li>
-          ))}
+        <h3 className="center">List of {shown} questions </h3>
+        <ul className="dashboard-list">
+          <GridList cellHeight={80} cols={1}>
+            {questions.map(id => (
+              <GridListTile key={id}>
+                <div>QUESTION ID: {id}</div>
+              </GridListTile>
+            ))}
+          </GridList>
         </ul>
       </div>
-    )
+    );
   }
 }
 
