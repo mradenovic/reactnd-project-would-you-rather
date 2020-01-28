@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
+import Dashboard from './Dashboard'
 
 class App extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/">
-            Dashboard
+            <Dashboard />
           </Route>
 
           <Route path="/questions/:question_id">
