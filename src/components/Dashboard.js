@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import QuestionsList from './QuestionsList'
 
 class Dashboard extends Component {
   state = {
@@ -11,14 +12,13 @@ class Dashboard extends Component {
 
   render() {
     const { answered } = this.state
-    const shown = answered ? 'Answered' : 'Unanswered'
     const show = !answered ? 'Answered' : 'Unanswered'
 
     return (
       <div>
           <button onClick={() => this.toggleAnswered()}>Show {show} Questions</button>
           <div>
-            List of {shown} questions 
+            <QuestionsList answered={answered}/>
           </div>
       </div>
     )
