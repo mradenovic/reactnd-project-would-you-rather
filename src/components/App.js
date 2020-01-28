@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
+import { withRouter } from 'react-router-dom'
 
 class App extends Component {
   componentDidMount() {
@@ -31,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default withRouter(connect()(App));

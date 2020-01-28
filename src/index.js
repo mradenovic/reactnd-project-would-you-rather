@@ -6,15 +6,18 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from  'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import rootReducer from './reducers'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const store = configureStore({
   reducer: rootReducer  
 })
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+        <App />
+    </Provider>
+  </Router>,  
   document.getElementById('root')
 );
 
