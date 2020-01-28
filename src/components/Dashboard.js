@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QuestionsList from './QuestionsList'
+import { Button } from '@material-ui/core'
 
 class Dashboard extends Component {
   state = {
@@ -16,12 +17,14 @@ class Dashboard extends Component {
 
     return (
       <div>
-          <button onClick={() => this.toggleAnswered()}>Show {show} Questions</button>
-          <div>
-            <QuestionsList answered={answered}/>
-          </div>
+        <Button variant="contained" onClick={() => this.toggleAnswered()}>
+          Show {show} Questions
+        </Button>
+        <div>
+          <QuestionsList answered={answered} />
+        </div>
       </div>
-    )
+    );
   }
 }
 
