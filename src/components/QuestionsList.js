@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
+import Question from './Question'
 
 class QuestionsList extends Component {
   render() {
@@ -10,16 +11,14 @@ class QuestionsList extends Component {
 
     return (
       <div>
-        <h3 className="center">List of {shown} questions </h3>
-        <ul className="dashboard-list">
-          <GridList cellHeight={80} cols={1}>
-            {questions.map(id => (
-              <GridListTile key={id}>
-                <div>QUESTION ID: {id}</div>
-              </GridListTile>
-            ))}
-          </GridList>
-        </ul>
+        <h3>List of {shown} questions </h3>
+        <GridList cellHeight="auto" cols={1}>
+          {questions.map(id => (
+            <GridListTile key={id}>
+              <Question id={id} viewType="preview"/>
+            </GridListTile>
+          ))}
+        </GridList>
       </div>
     );
   }
