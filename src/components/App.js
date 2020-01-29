@@ -4,16 +4,9 @@ import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
 import Main from './Main'
-import { makeStyles } from '@material-ui/core/styles'
-import { withStyles } from "@material-ui/core/styles"
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 
-const useStyles = makeStyles(theme => ({
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
-}))
 
 class App extends Component {
   componentDidMount() {
@@ -49,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(connect()(withStyles(useStyles)(App)));
+export default withRouter(connect()(App));
