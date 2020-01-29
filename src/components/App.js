@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
