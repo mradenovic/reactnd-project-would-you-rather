@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard'
+import QuestionPage from './QuestionPage'
 
 export default function Main() {
 
@@ -10,7 +11,7 @@ export default function Main() {
         <Dashboard />
       </Route>
 
-      <Route path="/questions/:question_id">Question</Route>
+      <Route path="/questions/:question_id" component={QuestionPage} />
 
       <Route path="/add">Add New Question</Route>
 
