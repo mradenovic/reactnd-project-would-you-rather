@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <CssBaseline />
-        <Container maxWidth="lg">
+        <Container maxWidth="sm">
           <header>Would you rather...</header>
           <main>
             <Main />
