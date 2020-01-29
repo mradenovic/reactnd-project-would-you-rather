@@ -9,6 +9,11 @@ import { formatDate } from '../utils/helpers'
 
 function Question(props) {
   const { question, user, viewType } = props
+
+  if (!question) {
+    return 'Loading'
+  }
+
   const questionDate = formatDate(question.timestamp)
   const view = (viewType) => {
     switch(viewType) {
