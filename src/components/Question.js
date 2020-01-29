@@ -23,7 +23,6 @@ function Question(props) {
         default: return 'View'
     }  
   }
-  console.log('VIEW', view)
 
   return (
     <div>
