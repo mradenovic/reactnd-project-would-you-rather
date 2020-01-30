@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
+import Header from './Header'
 import Main from './Main'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
@@ -18,7 +19,7 @@ class App extends Component {
       <div className="App">
         <CssBaseline />
         <Container maxWidth="sm">
-          <header>Would you rather...</header>
+          <header><Header /></header>
           <main>
             <Main />
           </main>
