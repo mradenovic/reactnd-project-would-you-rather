@@ -12,10 +12,7 @@ function QuestionPage(props) {
   )  
 }
 
-function mapStateToProps({questions /*, authedUser */ }, {match: {params: {question_id : id}}}) {
-  // TODO: Remove const after implementing user authorisation
-  const authedUser = 'sarahedo'
-
+function mapStateToProps({questions, authedUser }, {match: {params: {question_id : id}}}) {
   const question = questions[id]
   if (!question) return { id, viewType: null}
   
