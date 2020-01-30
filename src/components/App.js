@@ -21,7 +21,13 @@ class App extends Component {
         <Container maxWidth="sm">
           <header><Header /></header>
           <main>
-            <Main />
+            {
+              this.props.loading
+                ? 'Loading...'
+                : !this.props.authedUser
+                  ? 'Login'
+                  : <Main />
+            }
           </main>
           <footer>
             Icons made by{" "}
@@ -42,4 +48,12 @@ class App extends Component {
   }
 }
 
-export default withRouter(connect()(App))
+function mapStateToProps({ users, authedUser }) {
+  console.log('AUTHED_USER', authedUser, 'Loading:', Object.keys(users).length, users)
+  return {
+    authedUser,
+    loading: Object.keys(users).length === 0
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(App))
