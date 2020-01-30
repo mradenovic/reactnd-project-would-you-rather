@@ -24,10 +24,7 @@ class QuestionsList extends Component {
   }
 }
 
-function mapStateToProps ({ questions /*, authedUser*/ }, { answered }) {
-  // TODO: Remove const after implementing user authorisation
-  const authedUser = 'sarahedo'
-
+function mapStateToProps ({ questions, authedUser }, { answered }) {
   return {
     questions: Object.keys(questions)
       .filter( id => {
