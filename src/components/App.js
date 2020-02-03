@@ -10,7 +10,6 @@ import Container from '@material-ui/core/Container'
 
 class App extends Component {
   componentDidMount() {
-    console.log('component did mount')
     this.props.dispatch(initData())
   }
 
@@ -49,7 +48,6 @@ class App extends Component {
 }
 
 function mapStateToProps({ users, authedUser }) {
-  console.log('AUTHED_USER', authedUser, 'Loading:', Object.keys(users).length, users)
   return {
     authedUser,
     loading: Object.keys(users).length === 0
