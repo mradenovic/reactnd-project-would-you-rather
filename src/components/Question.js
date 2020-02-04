@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import QuestionPreview from './QuestionPreview'
 import QuestionResults from './QuestionResults'
+import QuestionVote from './QuestionVote'
 import { formatDate } from '../utils/helpers'
 
 function Question(props) {
@@ -19,7 +20,7 @@ function Question(props) {
   const view = (viewType) => {
     switch(viewType) {
         case 'preview': return <QuestionPreview question={question} />
-        case 'vote': return 'Vote'
+        case 'vote': return <QuestionVote question={question} />
         case 'poll': return <QuestionResults question={question} />
         default: return 'View'
     }  
