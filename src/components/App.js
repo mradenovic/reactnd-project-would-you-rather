@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
 import Header from './Header'
+import LogIn from './LogIn'
 import Main from './Main'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
@@ -24,7 +25,7 @@ class App extends Component {
               this.props.loading
                 ? 'Loading...'
                 : !this.props.authedUser
-                  ? 'Login'
+                  ? <LogIn />
                   : <Main />
             }
           </main>
