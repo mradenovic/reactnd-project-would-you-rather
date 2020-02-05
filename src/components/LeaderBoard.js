@@ -1,18 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { logIn } from '../reducers/authedUser'
+import LeaderBoardScore from './LeaderBoardScore'
 import {
   Typography,
 } from '@material-ui/core'
 
 function LeaderBoard(props) {
-  const { users, dispatch } = props
+  const { users } = props
 
   return (
     <div>
       <Typography variant="h6">
         {users.map(user => (
-            <div>{user.name} {user.questionCount} {user.answerCount} {user.score}</div>
+          <LeaderBoardScore user={user} />
         ))}
       </Typography>
     </div>
