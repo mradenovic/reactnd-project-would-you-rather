@@ -22,8 +22,6 @@ function LogIn(props) {
     dispatch(logIn(selectedUser))
   }
 
-  console.log(users)
-  
   return (
     <div>
       <Typography variant="h6">
