@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
+import Page404 from './Page404'
 import QuestionPreview from './QuestionPreview'
 import QuestionResults from './QuestionResults'
 import QuestionVote from './QuestionVote'
@@ -13,7 +14,9 @@ function Question(props) {
   const { question, user, viewType } = props
 
   if (!question) {
-    return 'Loading'
+    return (
+      <Page404 />
+    )
   }
 
   const questionDate = formatDate(question.timestamp)
