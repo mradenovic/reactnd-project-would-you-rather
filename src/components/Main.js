@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard'
 import QuestionPage from './QuestionPage'
+import Page404 from './Page404'
 
 function Main(props) {
 
@@ -17,7 +18,7 @@ function Main(props) {
 
         <Route path="/leaderboard">LeaderBoard</Route>
 
-        <Route path="*">Error</Route>
+        <Route path="*" component={Page404} />
       </Switch>
     )
 }
