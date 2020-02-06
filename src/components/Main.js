@@ -4,6 +4,7 @@ import Dashboard from './Dashboard'
 import QuestionPage from './QuestionPage'
 import Page404 from './Page404'
 import LeaderBoard from './LeaderBoard'
+import NewQuestion from './NewQuestion'
 
 function Main(props) {
 
@@ -15,7 +16,7 @@ function Main(props) {
 
         <Route path="/questions/:question_id" component={QuestionPage} />
 
-        <Route path="/add">Add New Question</Route>
+        <Route path="/add" component={NewQuestion} />
 
         <Route path="/leaderboard" component={LeaderBoard} />
 
