@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { addQuestion } from '../actions/async'
 import {
   Typography,
   TextField,
@@ -6,6 +9,8 @@ import {
 } from '@material-ui/core'
 
 function NewQuestion(props) {
+  const history = useHistory()
+  const { authedUser, dispatch } = props
   const [input, setInput] = React.useReducer(
     (state, newState) => ({...state, ...newState}),
     {
@@ -17,13 +22,21 @@ function NewQuestion(props) {
   const handleChange = event => {
     const name = event.target.name
     const newValue = event.target.value
-    
+
     setInput({[name]: newValue})
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log('handle submit value ', input)
+    const question = {
+      author: authedUser,
+      optionOneText: input.optionOne,
+      optionTwoText: input.optionTwo
+    }
+
+    dispatch(addQuestion(question)).then(newQuestion => {
+      history.push(`/questions/${newQuestion.id}`)
+    })
   }
 
   return (
@@ -60,4 +73,10 @@ function NewQuestion(props) {
   );
 }
 
-export default NewQuestion
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(NewQuestion)
