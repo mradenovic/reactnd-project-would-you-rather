@@ -6,6 +6,7 @@ import Header from './Header'
 import LogIn from './LogIn'
 import PageLoading from './PageLoading'
 import Main from './Main'
+import Footer from './Footer'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 
@@ -31,17 +32,7 @@ class App extends Component {
             }
           </main>
           <footer>
-            Icons made by{" "}
-            <a
-              href="https://www.flaticon.com/authors/roundicons"
-              title="Roundicons"
-            >
-              Roundicons
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>
+            <Footer />
           </footer>
         </Container>
       </div>
