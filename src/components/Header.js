@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOut } from '../reducers/authedUser'
 
@@ -7,11 +8,22 @@ import {
   Toolbar,
   Button,
   Avatar,
-  Typography  
+  Typography,
+  Tabs,
+  Tab
 } from '@material-ui/core'
 
 function Header(props) {
+  const history = useHistory()
   const { user, dispatch } = props
+  const [ index, setIndex ] = React.useState(0)
+
+  const handleChange = (event, value) => {
+    const routes = ['/', '/add', '/leaderboard']
+    setIndex(value)
+    history.push(routes[value])
+  }
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -27,6 +39,11 @@ function Header(props) {
           </Button>
         }
       </Toolbar>
+      <Tabs value={index} onChange={handleChange} aria-label="simple tabs example">
+        <Tab label="Home"  />
+        <Tab label="New Question" />
+        <Tab label="Leader Board" />
+      </Tabs>
     </AppBar>
   )
 }
