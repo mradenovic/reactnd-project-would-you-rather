@@ -4,6 +4,7 @@ import { initData } from '../actions/async'
 import { withRouter } from 'react-router-dom'
 import Header from './Header'
 import LogIn from './LogIn'
+import PageLoading from './PageLoading'
 import Main from './Main'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
@@ -23,7 +24,7 @@ class App extends Component {
           <main>
             {
               this.props.loading
-                ? 'Loading...'
+                ? <PageLoading />
                 : !this.props.authedUser
                   ? <LogIn />
                   : <Main />
