@@ -12,7 +12,7 @@ function LeaderBoard(props) {
     <div>
       <Typography variant="h6">
         {users.map(user => (
-          <LeaderBoardScore user={user} />
+          <LeaderBoardScore key={user.id} user={user} />
         ))}
       </Typography>
     </div>
