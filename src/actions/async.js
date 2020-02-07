@@ -19,7 +19,6 @@ export function addQuestion(question) {
     dispatch(setLoading(true))
     return saveQuestion(question).then((data) => {
       dispatch(initData())
-      dispatch(setLoading(false))
       return data
     })
   }
