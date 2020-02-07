@@ -6,12 +6,10 @@ import Question from './Question'
 
 class QuestionsList extends Component {
   render() {
-    const { questions, answered } = this.props
-    const shown = answered ? 'Answered' : 'Unanswered'
+    const { questions } = this.props
 
     return (
       <div>
-        <h3>List of {shown} questions </h3>
         <GridList cellHeight="auto" cols={1}>
           {questions.map(id => (
             <GridListTile key={id}>
