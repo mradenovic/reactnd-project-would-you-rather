@@ -49,10 +49,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ users, authedUser }) {
+function mapStateToProps({ loading, authedUser }) {
   return {
     authedUser,
-    loading: Object.keys(users).length === 0
+    loading
   }
 }
 
