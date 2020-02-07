@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addAnswer } from '../actions/async'
 import {
   Typography,
   FormControl,
@@ -9,7 +11,8 @@ import {
 } from '@material-ui/core'
 
 function QuestionVote(props) {
-  const { optionOne, optionTwo } = props.question
+  const { optionOne, optionTwo, id } = props.question
+  const { authedUser, dispatch } = props
   const [value, setValue] = React.useState('');
 
   const handleChange = event => {
@@ -17,7 +20,12 @@ function QuestionVote(props) {
   }
 
   const handleSubmit = event => {
-    console.log('handle submit value %s', value)
+    const info = {
+      authedUser: authedUser,
+      qid: id,
+      answer: value
+    }
+    dispatch(addAnswer(info))
   }
 
   return (
@@ -48,4 +56,10 @@ function QuestionVote(props) {
   )
 }
 
-export default QuestionVote
+function mapsStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapsStateToProps)(QuestionVote)
