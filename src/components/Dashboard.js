@@ -1,25 +1,34 @@
 import React, { Component } from 'react'
 import QuestionsList from './QuestionsList'
-import { Button } from '@material-ui/core'
+import {
+  Tabs,
+  Tab
+} from '@material-ui/core'
 
 class Dashboard extends Component {
   state = {
-    answered: false  
+    answered: false,
+    index: 0
   }
 
-  toggleAnswered() {
-    this.setState(prevState => ({ answered: !prevState.answered }))  
-  } 
+  handleChange(event, value) {
+    this.setState(prevState => ({
+      answered: !prevState.answered,
+      index: !prevState.answered
+        ? 1
+        : 0
+    }))
+  }
 
   render() {
-    const { answered } = this.state
-    const show = !answered ? 'Answered' : 'Unanswered'
+    const { answered, index } = this.state
 
     return (
       <div>
-        <Button variant="contained" onClick={() => this.toggleAnswered()}>
-          Show {show} Questions
-        </Button>
+        <Tabs value={index} onChange={() => this.handleChange()} aria-label="simple tabs example">
+          <Tab label="Unanswered"  />
+          <Tab label="Answered"  />
+        </Tabs>
         <div>
           <QuestionsList answered={answered} />
         </div>
