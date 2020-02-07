@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {
   Card,
   CardContent,
   CardHeader,
-  LinearProgress,
-  Button
+  LinearProgress
 } from '@material-ui/core'
 
 function PageLoading() {
