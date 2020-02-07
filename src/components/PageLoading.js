@@ -15,7 +15,7 @@ function PageLoading() {
     <Card >
       <CardHeader
          title="Loading data..." 
-         subtitle="...please wait!"
+         subheader="...please wait!"
       />
       <CardContent>
         <LinearProgress color="primary"/>
