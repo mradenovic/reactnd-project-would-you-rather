@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
-import { withRouter } from 'react-router-dom'
 import Header from './Header'
 import LogIn from './LogIn'
 import PageLoading from './PageLoading'
@@ -47,4 +46,4 @@ function mapStateToProps({ loading, authedUser }) {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(App))
+export default connect(mapStateToProps)(App)
