@@ -13,7 +13,7 @@ import {
 function QuestionVote(props) {
   const { optionOne, optionTwo, id } = props.question
   const { authedUser, dispatch } = props
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState('optionOne');
 
   const handleChange = event => {
     setValue(event.target.value);
