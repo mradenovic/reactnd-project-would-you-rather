@@ -6,9 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Page404 from './Page404'
-import QuestionPreview from './QuestionPreview'
-import QuestionResults from './QuestionResults'
-import QuestionVote from './QuestionVote'
+import QuestionView from './QuestionView'
 import { formatDate } from '../utils/helpers'
 
 const useStyles = makeStyles(theme => ({
@@ -41,14 +39,6 @@ function Question(props) {
   }
 
   const questionDate = formatDate(question.timestamp)
-  const view = (viewType) => {
-    switch(viewType) {
-        case 'preview': return <QuestionPreview question={question} />
-        case 'vote': return <QuestionVote question={question} />
-        case 'poll': return <QuestionResults question={question} />
-        default: return 'View'
-    }  
-  }
 
   return (
     <div>
@@ -63,7 +53,7 @@ function Question(props) {
           </div>
 
           <div className={classes.view}>
-            {view(viewType)}
+            <QuestionView viewType={viewType} question={question} />
           </div>
         </CardContent>
       </Card>
