@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
@@ -10,7 +11,27 @@ import QuestionResults from './QuestionResults'
 import QuestionVote from './QuestionVote'
 import { formatDate } from '../utils/helpers'
 
+const useStyles = makeStyles(theme => ({
+  content: {
+    display: 'flex',
+  },
+  avatarContainer: {
+    display: 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'center',
+  },
+  avatar: {
+    width: theme.spacing(10),
+    height: theme.spacing(10)
+  },
+  view: {
+    flex: '3 0 auto',
+    'padding-left': theme.spacing(2),
+  }
+}))
+
 function Question(props) {
+  const classes = useStyles()
   const { question, user, viewType } = props
 
   if (!question) {
@@ -33,16 +54,17 @@ function Question(props) {
     <div>
       <Card >
         <CardHeader
-          avatar={
-            <Avatar src={user.avatarURL} aria-label={user.name}>
-              {user.name}
-            </Avatar>
-          }
           title={`Question by ${user.name}`}
           subheader={`Asked at ${questionDate}`}
         />
-        <CardContent>
-          {view(viewType)}
+        <CardContent className={classes.content}>
+          <div className={classes.avatarContainer}>
+            <Avatar className={classes.avatar} src={user.avatarURL} aria-label={user.name} />
+          </div>
+
+          <div className={classes.view}>
+            {view(viewType)}
+          </div>
         </CardContent>
       </Card>
     </div>
