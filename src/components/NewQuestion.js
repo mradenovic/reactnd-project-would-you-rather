@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { addQuestion } from '../actions/async'
 import {
+  Card,
+  CardHeader,
+  CardContent,
   Typography,
   TextField,
   Button
@@ -41,36 +44,41 @@ function NewQuestion(props) {
 
   return (
     <div>
-      <Typography variant="h6">Create new question</Typography>
-
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <Typography variant="h6">Would you rather...</Typography>
-        <TextField
-          id="optionOne"
-          name="optionOne"
-          label="Option one"
-          value={input.optionOne}
-          onChange={handleChange}
-          required
+      <Card >
+        <CardHeader
+          title={'Would you rather'}
+          subheader={'Fill in options and submit'}
         />
-        <Typography variant="h6">or</Typography>
-        <TextField
-          id="optionTwo"
-          name="optionTwo"
-          label="Option two"
-          value={input.optionTwo}
-          onChange={handleChange}
-          required
-        />
+        <CardContent >
+          <form autoComplete="off" onSubmit={handleSubmit}>
+            <TextField
+              id="optionOne"
+              name="optionOne"
+              label="Option one"
+              value={input.optionOne}
+              onChange={handleChange}
+              required
+            />
+            <Typography variant="h6">or</Typography>
+            <TextField
+              id="optionTwo"
+              name="optionTwo"
+              label="Option two"
+              value={input.optionTwo}
+              onChange={handleChange}
+              required
+            />
 
-        <Typography variant="h6"></Typography>
+            <Typography variant="h6"></Typography>
 
-        <Button type="submit" variant="contained">
-          Submit
-        </Button>
-      </form>
+            <Button type="submit" variant="contained">
+              Submit
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
-  );
+  )
 }
 
 function mapStateToProps({ authedUser }) {
