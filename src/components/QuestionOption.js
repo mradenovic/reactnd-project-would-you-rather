@@ -10,6 +10,7 @@ function QuestionOption(props) {
   const { text, votes } = props.option
   const votesCount = votes.length
   const voted = votes.includes(authedUser)
+  const percentage = Math.floor(votesCount * 100 / totalVotes)
   const background = voted
     ? 'PowderBlue'
     : 'inherit'
@@ -20,9 +21,9 @@ function QuestionOption(props) {
       <Typography color="textSecondary" variant="h6">
         Would you rather {text}
       </Typography>
-      <LinearProgress variant="determinate" value={votesCount/totalVotes * 100} />
+      <LinearProgress variant="determinate" value={percentage} />
       <Typography>
-        {votesCount} out of {totalVotes} vote(s)
+        {votesCount} out of {totalVotes} vote(s) ({percentage}%)
       </Typography>
     </div>
   )
