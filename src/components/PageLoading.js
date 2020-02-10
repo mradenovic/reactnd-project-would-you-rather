@@ -10,17 +10,17 @@ function PageLoading() {
 
   return (
     <div>
-    <Card >
-      <CardHeader
-         title="Loading data..." 
-         subheader="...please wait!"
-      />
-      <CardContent>
-        <LinearProgress color="primary"/>
-      </CardContent>
-    </Card>
+      <Card >
+        <CardHeader
+          title="Loading data..."
+          subheader="...please wait!"
+        />
+        <CardContent>
+          <LinearProgress color="primary"/>
+        </CardContent>
+      </Card>
     </div>
-    )
+  )
 }
 
 export default PageLoading

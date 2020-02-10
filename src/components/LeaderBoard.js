@@ -24,19 +24,19 @@ function mapStateToProps({ users }) {
 
   return {
     users: keys
-    .map(key => {
-      const questionCount = users[key].questions.length  
-      const answerCount = Object.keys(users[key].answers).length
-      const score = questionCount + answerCount
+      .map(key => {
+        const questionCount = users[key].questions.length
+        const answerCount = Object.keys(users[key].answers).length
+        const score = questionCount + answerCount
 
-      return {
-        ...users[key],
-        questionCount,
-        answerCount,
-        score
-      }  
-    })
-    .sort((a, b) => b.score - a.score)
+        return {
+          ...users[key],
+          questionCount,
+          answerCount,
+          score
+        }
+      })
+      .sort((a, b) => b.score - a.score)
   }
 }
 

@@ -9,20 +9,20 @@ import NewQuestion from './NewQuestion'
 function Main(props) {
 
   return (
-      <Switch>
-        <Route exact path="/">
-          <Dashboard />
-        </Route>
+    <Switch>
+      <Route exact path="/">
+        <Dashboard />
+      </Route>
 
-        <Route path="/questions/:question_id" component={QuestionPage} />
+      <Route path="/questions/:question_id" component={QuestionPage} />
 
-        <Route path="/add" component={NewQuestion} />
+      <Route path="/add" component={NewQuestion} />
 
-        <Route path="/leaderboard" component={LeaderBoard} />
+      <Route path="/leaderboard" component={LeaderBoard} />
 
-        <Route path="*" component={Page404} />
-      </Switch>
-    )
+      <Route path="*" component={Page404} />
+    </Switch>
+  )
 }
 
 export default Main

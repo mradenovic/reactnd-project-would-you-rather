@@ -9,7 +9,7 @@ class QuestionsList extends Component {
     return (
       <div>
         {questions.map(id => (
-            <Question key={id} id={id} viewType="preview"/>
+          <Question key={id} id={id} viewType="preview"/>
         ))}
       </div>
     )
@@ -29,4 +29,4 @@ function mapStateToProps ({ questions, authedUser }, { answered }) {
   }
 }
 
-export default connect(mapStateToProps)(QuestionsList) 
+export default connect(mapStateToProps)(QuestionsList)

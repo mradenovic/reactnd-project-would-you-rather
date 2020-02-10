@@ -4,7 +4,7 @@ import { logOut } from '../reducers/authedUser'
 import HeaderLinks from './HeaderLinks'
 
 import { makeStyles } from '@material-ui/core/styles'
-import { 
+import {
   AppBar,
   Toolbar,
   Button,
@@ -43,7 +43,7 @@ function Header(props) {
           </Button>
         )}
       </Toolbar>
-      
+
       <HeaderLinks />
     </AppBar>
   )

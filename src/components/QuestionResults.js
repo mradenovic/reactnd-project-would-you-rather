@@ -16,7 +16,7 @@ function QuestionResults(props) {
       <QuestionOption option={optionOne} totalVotes={totalVotes} />
       <QuestionOption option={optionTwo} totalVotes={totalVotes} />
     </div>
-  );  
+  )
 }
 
 export default QuestionResults

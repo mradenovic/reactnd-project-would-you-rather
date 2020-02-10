@@ -5,23 +5,23 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   Typography,
   CircularProgress,
-  Chip, 
+  Chip,
   Badge
 } from '@material-ui/core'
 
-  const useStyles = makeStyles(theme => ({
-    root: {
-      background: props => props.option.votes.includes(props.authedUser)
-        ? 'PowderBlue'
-        : 'inherit'
-    },
-    badge: {
-      position: 'relative',
-      left: theme.spacing(-3),
-      top: theme.spacing(-2.5)
-    },
-  }))
-  
+const useStyles = makeStyles(theme => ({
+  root: {
+    background: props => props.option.votes.includes(props.authedUser)
+      ? 'PowderBlue'
+      : 'inherit'
+  },
+  badge: {
+    position: 'relative',
+    left: theme.spacing(-3),
+    top: theme.spacing(-2.5)
+  },
+}))
+
 function QuestionOption(props) {
   const classes = useStyles(props)
   const { totalVotes, authedUser } = props
@@ -32,7 +32,7 @@ function QuestionOption(props) {
 
   return (
     <div className={classes.root}>
-      {voted && <Chip color="primary" label="Your vote!" />}  
+      {voted && <Chip color="primary" label="Your vote!" />}
       <Typography color="textSecondary" variant="h6">
         Would you rather {text}
       </Typography>

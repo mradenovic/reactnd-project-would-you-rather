@@ -16,13 +16,29 @@
     "redux": "^4.0.5"
   },
   "scripts": {
+    "lint": "eslint src",
+    "prettify": "prettier src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "indent": ["error", 2, {"SwitchCase": 1}],
+      "no-trailing-spaces": "error",
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "never"],
+      "react/prop-types": [0],
+      "no-console": "warn"
+    }
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   },
   "browserslist": {
     "production": [

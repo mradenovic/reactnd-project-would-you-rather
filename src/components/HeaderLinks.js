@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import {
   Tabs,
-  Tab  
+  Tab
 } from '@material-ui/core'
 
 function HeaderLinks() {
@@ -23,7 +23,7 @@ function HeaderLinks() {
       <Tab label="Leader Board" />
       <Tab label="Invisible" style={{ display: 'none'}} />
     </Tabs>
-  )    
+  )
 }
 
 export default HeaderLinks

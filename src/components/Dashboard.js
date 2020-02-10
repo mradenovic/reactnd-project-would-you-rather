@@ -33,7 +33,7 @@ class Dashboard extends Component {
           <QuestionsList answered={answered} />
         </div>
       </div>
-    );
+    )
   }
 }
 

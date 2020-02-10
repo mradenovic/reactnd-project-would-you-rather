@@ -68,7 +68,7 @@ function Question(props) {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }
 
 function mapStateToProps({ users, questions, authedUser }, { id }) {

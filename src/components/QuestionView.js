@@ -9,11 +9,11 @@ function QuestionView(props) {
 
   const view = (viewType) => {
     switch(viewType) {
-        case 'preview': return <QuestionPreview question={question} />
-        case 'vote': return <QuestionVote question={question} />
-        case 'poll': return <QuestionResults question={question} />
-        default: return 'Error'
-    }  
+      case 'preview': return <QuestionPreview question={question} />
+      case 'vote': return <QuestionVote question={question} />
+      case 'poll': return <QuestionResults question={question} />
+      default: return 'Error'
+    }
   }
 
   return view(viewType)

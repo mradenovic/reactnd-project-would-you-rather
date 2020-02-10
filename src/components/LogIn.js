@@ -15,7 +15,7 @@ function LogIn(props) {
   const [selectedUser, setSelectedUser] = React.useState('')
 
   const handleChange = event => {
-    setSelectedUser(event.target.value);
+    setSelectedUser(event.target.value)
   }
 
   const handleSubmit = event => {
@@ -35,7 +35,7 @@ function LogIn(props) {
           id="demo-simple-select"
           value={selectedUser}
           onChange={handleChange}
-          style={{ width: 300 }}        
+          style={{ width: 300 }}
         >
           {users.map(user => (
             <MenuItem key={user.id} value={user.id}>

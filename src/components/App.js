@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { initData } from '../actions/async'
 import Header from './Header'
@@ -35,7 +35,7 @@ class App extends Component {
           </footer>
         </Container>
       </div>
-    );
+    )
   }
 }
 

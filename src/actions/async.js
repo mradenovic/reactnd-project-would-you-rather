@@ -1,5 +1,5 @@
 import { setLoading } from '../reducers/loading'
-import { getInitialData, saveQuestion, saveQuestionAnswer } from "../utils/api"
+import { getInitialData, saveQuestion, saveQuestionAnswer } from '../utils/api'
 import { initUsers } from '../reducers/users'
 import { initQuestions } from '../reducers/questions'
 

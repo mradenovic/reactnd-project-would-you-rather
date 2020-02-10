@@ -18,7 +18,7 @@ function QuestionPreview(props) {
         <Button variant="contained">View Poll</Button>
       </Link>
     </div>
-  );  
+  )
 }
 
 export default QuestionPreview

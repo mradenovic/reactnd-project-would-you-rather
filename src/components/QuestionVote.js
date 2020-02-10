@@ -13,10 +13,10 @@ import {
 function QuestionVote(props) {
   const { optionOne, optionTwo, id } = props.question
   const { authedUser, dispatch } = props
-  const [value, setValue] = React.useState('optionOne');
+  const [value, setValue] = React.useState('optionOne')
 
   const handleChange = event => {
-    setValue(event.target.value);
+    setValue(event.target.value)
   }
 
   const handleSubmit = event => {
@@ -41,14 +41,14 @@ function QuestionVote(props) {
             control={<Radio color="primary" />}
             label={optionOne.text}
           />
-        
+
           <FormControlLabel
             value="optionTwo"
             control={<Radio color="primary" />}
             label={optionTwo.text}
           />
         </RadioGroup>
-        
+
         <Button variant="contained" onClick={handleSubmit}>Submit</Button>
       </FormControl>
 

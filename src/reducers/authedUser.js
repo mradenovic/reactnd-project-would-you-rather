@@ -9,7 +9,7 @@ const authedUser = createSlice({
       return action.payload
     },
     logOut(state, action) {
-      return null  
+      return null
     }
   }
 })
