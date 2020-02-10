@@ -9,6 +9,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(1),
@@ -29,11 +30,35 @@ const useStyles = makeStyles(theme => ({
   },
   scores: {
     flexGrow: 1
+  },
+  score: props => {
+    switch(props.index) {
+      case 0:
+        return {
+          color: theme.palette.getContrastText('#FFD700'),
+          backgroundColor: '#FFD700'
+        }
+      case 1:
+        return {
+          color: theme.palette.getContrastText('#C0C0C0'),
+          backgroundColor: 'C0C0C0'
+        }
+      case 2:
+        return {
+          color: theme.palette.getContrastText('#cd7f32'),
+          backgroundColor: '#cd7f32'
+        }
+      default:
+        return {
+          color: theme.palette.getContrastText('#b0e0e6'),
+          backgroundColor: '#b0e0e6'
+        }
+    }
   }
 }))
 
 function LeaderBoardScore(props) {
-  const classes = useStyles()
+  const classes = useStyles(props)
   const { name, avatarURL, questionCount, answerCount, score} = props.user
 
   return (
@@ -68,7 +93,7 @@ function LeaderBoardScore(props) {
             <Typography variant="h6">
               Score
             </Typography>
-            <Avatar color="primary">{score}</Avatar>
+            <Avatar className={classes.score} >{score}</Avatar>
           </div>
         </CardContent>
       </Card>

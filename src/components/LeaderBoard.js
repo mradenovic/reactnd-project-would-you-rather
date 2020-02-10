@@ -11,8 +11,8 @@ function LeaderBoard(props) {
   return (
     <div>
       <Typography variant="h6">
-        {users.map(user => (
-          <LeaderBoardScore key={user.id} user={user} />
+        {users.map((user, index) => (
+          <LeaderBoardScore key={user.id} index={index} user={user} />
         ))}
       </Typography>
     </div>
