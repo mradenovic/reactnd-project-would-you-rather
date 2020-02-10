@@ -43,7 +43,7 @@ function LogIn(props) {
             </MenuItem>
           ))}
         </Select>
-        <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+        <Button variant="contained" onClick={handleSubmit} disabled={selectedUser === ''}>Submit</Button>
       </FormControl>
     </div>
   )
