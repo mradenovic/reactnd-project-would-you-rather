@@ -9,6 +9,10 @@ import {
   Typography,
 } from '@material-ui/core'
 
+const colors = (color, theme) => ({
+  color: theme.palette.getContrastText(color),
+  backgroundColor: color
+})
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +26,7 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center'
-      }
+    }
   },
   avatar: {
     width: theme.spacing(10),
@@ -33,26 +37,14 @@ const useStyles = makeStyles(theme => ({
   },
   score: props => {
     switch(props.index) {
-      case 0:
-        return {
-          color: theme.palette.getContrastText('#FFD700'),
-          backgroundColor: '#FFD700'
-        }
-      case 1:
-        return {
-          color: theme.palette.getContrastText('#C0C0C0'),
-          backgroundColor: 'C0C0C0'
-        }
-      case 2:
-        return {
-          color: theme.palette.getContrastText('#cd7f32'),
-          backgroundColor: '#cd7f32'
-        }
-      default:
-        return {
-          color: theme.palette.getContrastText('#b0e0e6'),
-          backgroundColor: '#b0e0e6'
-        }
+      case 0: // Gold
+        return colors('#ffd700', theme)
+      case 1: // Silver
+        return colors('#c0c0c0', theme)
+      case 2: // Bronze
+        return colors('#cd7f32', theme)
+      default: // Everybody else
+        return colors('#b0e0e6', theme)
     }
   }
 }))
