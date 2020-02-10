@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addAnswer } from '../actions/async'
 import {
@@ -60,6 +61,10 @@ function mapsStateToProps({ authedUser }) {
   return {
     authedUser
   }
+}
+
+QuestionVote.propTypes = {
+  question: PropTypes.object.isRequired
 }
 
 export default connect(mapsStateToProps)(QuestionVote)

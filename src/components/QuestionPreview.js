@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
@@ -19,6 +20,10 @@ function QuestionPreview(props) {
       </Link>
     </div>
   )
+}
+
+QuestionPreview.propTypes = {
+  question: PropTypes.object.isRequired
 }
 
 export default QuestionPreview

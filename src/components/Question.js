@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
@@ -79,6 +80,11 @@ function mapStateToProps({ users, questions, authedUser }, { id }) {
     question,
     user
   }
+}
+
+Question.propTypes = {
+  id: PropTypes.string.isRequired,
+  viewType: PropTypes.oneOf(['preview', 'vote', 'poll'])
 }
 
 export default connect(mapStateToProps)(Question)

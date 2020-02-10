@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Typography } from '@material-ui/core'
 import QuestionOption from './QuestionOption'
 
@@ -17,6 +18,10 @@ function QuestionResults(props) {
       <QuestionOption option={optionTwo} totalVotes={totalVotes} />
     </div>
   )
+}
+
+QuestionResults.propTypes = {
+  question: PropTypes.object.isRequired
 }
 
 export default QuestionResults
