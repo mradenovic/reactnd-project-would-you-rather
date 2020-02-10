@@ -5,11 +5,15 @@ import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
+import Divider from '@material-ui/core/Divider'
 import Page404 from './Page404'
 import QuestionView from './QuestionView'
 import { formatDate } from '../utils/helpers'
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(1),
+  },
   content: {
     display: 'flex',
   },
@@ -24,7 +28,9 @@ const useStyles = makeStyles(theme => ({
   },
   view: {
     flex: '3 0 auto',
-    'padding-left': theme.spacing(2),
+  },
+  divider: {
+    padding: theme.spacing(2)
   }
 }))
 
@@ -41,7 +47,7 @@ function Question(props) {
   const questionDate = formatDate(question.timestamp)
 
   return (
-    <div>
+    <div className={classes.root}>
       <Card >
         <CardHeader
           title={`Question by ${user.name}`}
@@ -50,6 +56,10 @@ function Question(props) {
         <CardContent className={classes.content}>
           <div className={classes.avatarContainer}>
             <Avatar className={classes.avatar} src={user.avatarURL} aria-label={user.name} />
+          </div>
+
+          <div className={classes.divider}>
+            <Divider orientation="vertical" />
           </div>
 
           <div className={classes.view}>
